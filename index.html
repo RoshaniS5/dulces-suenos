@@ -1,41 +1,26 @@
-<!-- <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
-<script>
-    /* global nn */
-    const table = 'table.png'
-    const hands = 'hands.png'
-    let color = 'black'
-    async function setup () {
-        nn.get('body').css({
-            backgroundColor: color
-        })
-
-        await nn.loadImage(table)
-        const start = nn.create('img')
-        .set({
-            src: table
-        })
-        .css({
-            position: 'absolute',
-            height: nn.height
-        })
-        .addTo('body')
-
-        start.css({
-            top: nn.height / 2 - start.height / 2,
-            left: nn.width / 2 - start.width / 2
-        })
-    }
-
-    nn.on('load', setup)
-</script> -->
 <style>
+    * {box-sizing: border-box;}
+
     body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
         margin: 0;
         overflow: hidden;
+    }
+
+    .frame {
+        position: relative;
+        width: 1024px;
+        height: 768px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
         background-color: #1F1F26;
         background-image: url("table.png");
         background-position: center;
-        background-size: auto 100vh;
+        background-size:contain;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
@@ -44,21 +29,69 @@
         transform-style: preserve-3d;
         perspective: 500px;
         perspective-origin: center;
-        width: 912px;
-        height: 558px;
-        margin: 10vh auto;
+        width: 1024px;
+        height: 768px;
+        margin: 0vh auto;
     }
 
     #hands {
         width: 100%;
-        transform: translateZ(100px);
+        transform: translateY(100px) translateZ(100px);
     }
+
+    svg {
+        position: absolute;
+        max-width: 100%;
+        top: 100px;
+        left: 100px;
+        z-index: 1000px;
+    }
+
+    /* polygon {
+        position: absolute;
+        z-index: 1000px;
+    } */
+
+    /* a {
+        background-color: aliceblue;
+        clip-path: polygon(612px 75px,604px 103px,602px 139px,600px 171px,620px 186px,628px 183px,635px 194px,634px 205px,644px 196px,588px 314px,590px 320px,580px 335px,537px 346px,557px 350px,529px 362px,560px 355px,542px 376px,565px 358px,555px 383px,586px 356px,603px 372px,596px 357px,605px 335px,610px 333px,690px 231px,705px 242px,638px 370px,639px 373px,633px 382px,602px 392px,621px 397px,607px 425px,626px 406px,617px 435px,635px 409px,637px 433px,642px 409px,650px 432px,647px 401px,739px 281px,739px 313px,744px 313px,719px 462px,777px 462px,779px 382px,802px 461px,804px 189px,756px 134px,712px 127px,704px 92px,642px 58px);
+        z-index: 1000px;
+    }
+
+    a:hover {
+        cursor: pointer;
+    } */
 </style>
 
-<section id="diningscene">
-    <img id="hands" src="hands.png" alt="player's hands">
-</section>
+<div class="frame">
+    <section id="diningscene">
+        <!-- <map name="mother">
+            <area shape="poly" coords="612,75,604,103,602,139,600,171,620,186,628,183,635,194,634,205,644,196,588,314,590,320,580,335,537,346,557,350,529,362,560,355,542,376,565,358,555,383,586,356,603,372,596,357,605,335,610,333,690,231,705,242,638,370,639,373,633,382,602,392,621,397,607,425,626,406,617,435,635,409,637,433,642,409,650,432,647,401,739,281,739,313,744,313,719,462,777,462,779,382,802,461,804,189,756,134,712,127,704,92,642,58" alt="Mother" href="#">
+        </map> -->
+        <!-- <a href="#"></a> -->
+        <img id="hands" usemap="#mother" src="hands.png" alt="player's hands">
+    </section>
+    <svg viewbox="0 0 800 1000">
+        <a href="#">
+            <!-- <polygon points="612,75 604,103 602,139 600,171 620,186 628,183 635,194 634,205 644,196 588,314 590,320 580,335 537,346 557,350 529,362 560,355 542,376 565,358 555,383 586,356 603,372 596,357 605,335 610,333 690,231 705,242 638,370 639,373 633,382 602,392 621,397 607,425 626,406 617,435 635,409 637,433 642,409 650,432 647,401 739,281 739,313 744,313 719,462 777,462 779,382 802,461 804,189 756,134 712,127 704,92 642,58" style="fill:lime;"/> -->
+            <path d="M 612 75 L 604 103 L 602 139 L 600 171 L 620 186 L 628 183 L 635 194 L 634 205 L 644 196 L 588 314 L 590 320 L 580 335 L 537 346 L 557 350 L 529 362 L 560 355 L 542 376 L 565 358 L 555 383 L 586 356 L 603 372 L 596 357 L 605 335 L 610 333 L 690 231 L 705 242 L 638 370 L 639 373 L 633 382 L 602 392 L 621 397 L 607 425 L 626 406 L 617 435 L 635 409 L 637 433 L 642 409 L 650 432 L 647 401 L 739 281 L 739 313 L 744 313 L 719 462 L 777 462 L 779 382 L 802 461 L 804 189 L 756 134 L 712 127 L 704 92 L 642 58 Z" style="fill:lime;"/>
+        </a>
+    </svg>
+</div> 
 
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+<script>
+    function sizer () {
+        const scale = Math.min(
+            nn.width / 500,
+            nn.height / 500
+        )
+        nn.get('.frame').scale(scale)
+    }
+
+    // nn.on('load', sizer)
+    // nn.on('resize', sizer)
+</script>
 <script>
     window.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) * 100
