@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 1024px;
+        height: 2048px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    .firsttext {
+        color: white;
+        font-size: 25px;
+        text-align: right;
+        margin-right: 10px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    .secondtext {
+        color: white;
+        font-size: 25px;
+        text-align: right;
+        margin-left: 505px;
+        margin-right: 10px;
+        position: absolute;
+        top: 50px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #third {
+        color: white;
+        font-size: 25px;
+        text-align: right;
+        margin-left: 490px;
+        margin-right: 10px;
+        position: absolute;
+        top: 100px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #fourth {
+        color: white;
+        font-size: 25px;
+        text-align: right;
+        margin-left: 505px;
+        margin-right: 10px;
+        position: absolute;
+        top: 150px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #fifth {
+        color: white;
+        font-size: 25px;
+        text-align: right;
+        margin-left: 505px;
+        margin-right: 10px;
+        position: absolute;
+        top: 225px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #sixth {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        position: absolute;
+        top: 400px;
+        left: 150px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #seventh {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        margin-right: 512px;
+        margin-left: 10px;
+        position: absolute;
+        top: 450px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    #sugar {
+        position: absolute;
+        top: 450px;
+        left: 512px;
+        width: 512px;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+    .momface {
+        position: absolute;
+        height: 400px;
+    }
+
+    .lipspath {
+        opacity: 0;
+        transform: scale(1.5) translate(-395px,-60px);
+    }
+</style>
+<div class="frame">
+    <img class="momface" src="momface.png" alt="the mom's face">
+    <svg viewbox="0 0 768 1024">
+        <a onclick="displaySet()">
+            <path class="lipspath" d="M 358 120 L 401 103 L 410 104 L 423 102 L 471 120 L 413 143 Z"/>
+        </a>
+    </svg>
+    <p id="first" class="firsttext">“What’s wrong, <i>cariño</i>? You haven’t touched your food.”</p>
+    <p id="second" class="secondtext">I scrunched my nose from the timbre of her voice.</p>
+    <p id="third">It irked me, and I couldn’t place my finger on <i>why</i>.</p>
+    <p id="fourth">I was supposed to be thankful that it was sweet, that they weren’t beating me up or starving me.</p>
+    <p id="fifth">Instead, they were feeding me <i>arroz con mole</i> and smiling at me as if I were their daughter.</p>
+    <p id="sixth">My finger landed on a reason for the irritation: her voice was sickly sweet.</p>
+    <p id="seventh">I imagined an old witch’s fingers gripping a paper bag tightly, pouring heaps of sugar into a mixing bowl: simply another ingredient in the treats for Hansel and Gretel. In excess, sugar becomes a lure, forcing what was once sweet on the tongue into bitterness. People say you can never be too nice. But there’s a point in which you wonder if the kindness is genuine. If the nice words and gestures are all just part of a mask to obscure something rotting—a corpse beneath the floorboards. Sometimes I can peek underneath as the boards raise themselves, its constructed barebones nature made clear through the rusted nails becoming the teeth of a gaping mouth. Sometimes the facade falls apart on its own through contradiction.</p>
+    <img id="sugar" src="sugar.png" alt="a witch's hand pouring sugar into a mixing bowl">
+</div>
+
+<script>
+    function displaySet() {
+        displayDialogue("first");
+        setTimeout(function(){displayDialogue("second")}, 1000);
+        setTimeout(function(){displayDialogue("third")}, 2000);
+        setTimeout(function(){displayDialogue("fourth")}, 3000);
+        setTimeout(function(){displayDialogue("fifth")}, 5000);
+        setTimeout(function(){displayDialogue("sixth")}, 7000);
+        setTimeout(function(){displayDialogue("seventh")}, 9000);
+        setTimeout(function(){displayDialogue("sugar")}, 9000);
+    }
+
+    function displayDialogue(dialogue) {
+        document.getElementById(dialogue).style.opacity = 1;
+    }
+</script>
