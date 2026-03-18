@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 1500px;
+        height: 3000px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #corpse {
+        position: absolute;
+        top: 0;
+        left: -10;
+        width: 1500px;
+    }
+
+    #firstchoice {
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        top: 900px;
+        left: 240px;
+        transform: rotate(-68deg);
+    }
+
+    #firstchoice:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.3);
+        transition: all 250ms ease-in-out;
+    }
+
+    #secondchoice {
+        color: white;
+        background-color: black;
+        text-decoration: none;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        top: 900px;
+        left: 925px;
+        transform: rotate(76deg);
+    }
+
+    #secondchoice:hover {
+        color: black;
+        background-color: white;
+        transform: scale(1.3);
+        transition: all 250ms ease-in-out;
+    }
+</style>
+<div class="frame">
+    <img id="corpse" src="corpse.png">
+    <!-- <svg viewbox="0 0 3000 1500">
+        <path id="choice1" d="M 384 1157 L 579 750 Z" fill="transparent"/>
+        <text width="25">
+            <textPath alignment-baseline="top" xlink:href="#choice1">
+                “I’m just…not hungry,” I muttered.
+            </textPath>
+        </text>
+    </svg> -->
+    <a id="firstchoice" href="">“I’m just…not hungry,” I muttered.</a>
+    <a id="secondchoice" href="">“Don't call me that. I'm not your <i>cariño</i>.”</a>
+</div>

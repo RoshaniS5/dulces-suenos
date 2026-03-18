@@ -87,7 +87,7 @@
         margin-right: 512px;
         margin-left: 10px;
         position: absolute;
-        top: 450px;
+        top: 750px;
         opacity: 0;
         transition: opacity 500ms ease-in;
     }
@@ -98,6 +98,7 @@
         left: 512px;
         width: 512px;
         opacity: 0;
+        z-index: 500px;
         transition: opacity 500ms ease-in;
     }
 
@@ -108,14 +109,32 @@
 
     .lipspath {
         opacity: 0;
-        transform: scale(1.5) translate(-395px,-60px);
+        transform: scale(2.1) translate(-179px,-785px);
+    }
+
+    .floorpath {
+        opacity: 0;
+        transform: scale(2) translate(-170px,-815px);
+    }
+
+    svg {
+        position: absolute;
+        width: 1024px;
+        height: 2048px;
+        top: 0;
+        left: 0;
+        z-index: 1000px;
     }
 </style>
 <div class="frame">
     <img class="momface" src="momface.png" alt="the mom's face">
-    <svg viewbox="0 0 768 1024">
+    <img id="sugar" src="sugar.png" alt="a witch's hand pouring sugar into a mixing bowl">
+    <svg viewbox="0 0 2048 1024">
         <a onclick="displaySet()">
             <path class="lipspath" d="M 358 120 L 401 103 L 410 104 L 423 102 L 471 120 L 413 143 Z"/>
+        </a>
+        <a id="floorpath">
+            <path class="floorpath" d="M 913 1442 L 901 1481 L 1044 1446 L 1100 1415 L 1088 1366 L 1035 1396 Z"/>
         </a>
     </svg>
     <p id="first" class="firsttext">“What’s wrong, <i>cariño</i>? You haven’t touched your food.”</p>
@@ -125,22 +144,22 @@
     <p id="fifth">Instead, they were feeding me <i>arroz con mole</i> and smiling at me as if I were their daughter.</p>
     <p id="sixth">My finger landed on a reason for the irritation: her voice was sickly sweet.</p>
     <p id="seventh">I imagined an old witch’s fingers gripping a paper bag tightly, pouring heaps of sugar into a mixing bowl: simply another ingredient in the treats for Hansel and Gretel. In excess, sugar becomes a lure, forcing what was once sweet on the tongue into bitterness. People say you can never be too nice. But there’s a point in which you wonder if the kindness is genuine. If the nice words and gestures are all just part of a mask to obscure something rotting—a corpse beneath the floorboards. Sometimes I can peek underneath as the boards raise themselves, its constructed barebones nature made clear through the rusted nails becoming the teeth of a gaping mouth. Sometimes the facade falls apart on its own through contradiction.</p>
-    <img id="sugar" src="sugar.png" alt="a witch's hand pouring sugar into a mixing bowl">
 </div>
 
 <script>
     function displaySet() {
-        displayDialogue("first");
-        setTimeout(function(){displayDialogue("second")}, 1000);
-        setTimeout(function(){displayDialogue("third")}, 2000);
-        setTimeout(function(){displayDialogue("fourth")}, 3000);
-        setTimeout(function(){displayDialogue("fifth")}, 5000);
-        setTimeout(function(){displayDialogue("sixth")}, 7000);
-        setTimeout(function(){displayDialogue("seventh")}, 9000);
-        setTimeout(function(){displayDialogue("sugar")}, 9000);
+        displayElement("first");
+        setTimeout(function(){displayElement("second")}, 1000);
+        setTimeout(function(){displayElement("third")}, 2000);
+        setTimeout(function(){displayElement("fourth")}, 3000);
+        setTimeout(function(){displayElement("fifth")}, 5000);
+        setTimeout(function(){displayElement("sixth")}, 7000);
+        setTimeout(function(){displayElement("seventh")}, 9000);
+        setTimeout(function(){displayElement("sugar")}, 9000);
+        setTimeout(function(){document.getElementById("floorpath").setAttribute("href", "corpse.html")}, 9000)
     }
 
-    function displayDialogue(dialogue) {
-        document.getElementById(dialogue).style.opacity = 1;
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
     }
 </script>
