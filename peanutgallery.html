@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 1024px;
+        height: 768px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #firstknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 15%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(-25deg);
+        transition: opacity 250ms ease-in;
+    }
+
+    #secondknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 45%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(25deg);
+        transition: opacity 250ms ease-in;
+    }
+
+    #thirdknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 75%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(-25deg);
+        transition: opacity 250ms ease-in;
+    }
+</style>
+
+<div class="frame">
+    <p id="firstknock">KNOCK</p>
+    <p id="secondknock">KNOCK</p>
+    <p id="thirdknock">KNOCK</p>
+</div>
+
+<script>
+    window.onload = function knock() {
+        displayElement("firstknock");
+        setTimeout(function(){displayElement("secondknock")}, 500);
+        setTimeout(function(){displayElement("thirdknock")}, 1000);
+    }
+
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
+    }
+</script>

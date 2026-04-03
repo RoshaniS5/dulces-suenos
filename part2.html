@@ -128,7 +128,7 @@
 </style>
 <div class="frame">
     <img class="momface" src="momface.png" alt="the mom's face">
-    <img id="sugar" src="sugar.png" alt="a witch's hand pouring sugar into a mixing bowl">
+    <img id="sugar" src="sugar.png" alt="a witch's hand pouring sugar into a mixing bowl" onload="sugars()">
     <svg viewbox="0 0 2048 1024">
         <a onclick="displaySet()">
             <path class="lipspath" d="M 358 120 L 401 103 L 410 104 L 423 102 L 471 120 L 413 143 Z"/>
@@ -161,5 +161,18 @@
 
     function displayElement(element) {
         document.getElementById(element).style.opacity = 1;
+    }
+
+    function sugars() {
+        setInterval(switchSugar, 1000);
+    }
+
+    function switchSugar() {
+        let sugar = document.getElementById("sugar");
+        if (sugar.getAttribute("src") == "sugar.png") {
+            sugar.setAttribute("src", "sugar2.png");
+        } else {
+            sugar.setAttribute("src", "sugar.png");
+        }
     }
 </script>
