@@ -1,0 +1,248 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 576px;
+        height: 1024px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #man1 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 1;
+        top: 10px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #man2 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #man3 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        text-decoration: none;
+        top: 50%;
+        left: 5%;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        z-index: -1;
+    }
+
+    #man3:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #man4 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        text-decoration: none;
+        top: 50%;
+        left: 5%;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        z-index: -1;
+    }
+
+    #man4:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #silhouette {
+        position: absolute;
+        height: 1024px;
+    }
+
+    #man5 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #man6 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 90px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #phrases1 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #phrases2 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 30%;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #and {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 40%;
+        left: 45%;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #phrases3 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        right: 10px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #convo {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 70%;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #hell {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        left: 10%;
+        transition: all 250ms ease-in-out;
+    }
+
+    #vitriol {
+        background-color: black;
+        color: crimson;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 70%;
+        left: 10px;
+        text-decoration: none;
+        transition: all 250ms ease-in-out;
+    }
+
+    #vitriol:hover {
+        color: black;
+        background-color: crimson;
+        transform: scale(1.3);
+        transition: all 250ms ease-in-out;
+    }
+</style>
+
+<div class="frame">
+    <p id="man1">I heard the man at the door tsk, and could imagine him shaking his head in either disappointment or disapproval. It was probably directed towards me. In my nearly twenty years of existence, it usually was.</p>
+    <p id="man2">There was a familiar contour of him in my mind—</p>
+    <a id="man3" onclick="nextStage()">short and stocky with a jaw that was freshly shaven.</a>
+    <img id="silhouette" src="silhouette.png">
+    <a id="man4" onclick="nextNextStage()">He had eyes the color of cinnamon and hair almost black but not quite. It revealed its brown nature under the sun, like the darkest of coffee beans.</a>
+    <p id="man5">I knew all this just from the voice, but he was just a stranger too. </p>
+    <p id="man6">Catching his aftershave as it wafted across rooms, my nose twitched with irritation.</p>
+    <p id="phrases1">I heard the voices drop to whispers, little rustles at the edge of a forest I was in the middle of. I stretched my ear open, as far as it could go, and made out a few phrases:</p>
+    <p id="phrases2">“I don’t know what happened”</p>
+    <p id="and">and</p>
+    <p id="phrases3">“she used to be so well-behaved.”</p>
+    <p id="convo">Their conversation burned a hole in the pit of my stomach, made my eyebrows furrow.</p>
+    <p id="hell">What the hell did they know about <i>me</i>?</p>
+    <a id="vitriol" href="bathroom.html">I stayed like this, in this vitriolic state, for who knows how long.</p>
+</div>
+
+<script>
+    window.onload = function initial() {
+        setTimeout(function(){removeElement("man1")}, 1500);
+        setTimeout(function(){displayElement("man2")}, 2000);
+        setTimeout(function(){displayElement("man3")}, 3000);
+        setTimeout(function(){document.getElementById("man3").style.zIndex = 10;}, 3000);
+    }
+
+    function nextStage() {
+        document.getElementById("man3").remove();
+        document.getElementById("silhouette").setAttribute("src", "partialsilhouette.png");
+        displayElement("man4");
+        document.getElementById("man4").style.zIndex = 11;
+    }
+
+    function nextNextStage() {
+        document.getElementById("man4").remove();
+        document.getElementById("silhouette").setAttribute("src", "manatdoor.png");
+        removeElement("man2");
+        setTimeout(function(){displayElement("man5")}, 500);
+        setTimeout(function(){displayElement("man6")}, 1000);
+        setTimeout(function(){removeElement("man5")}, 2500);
+        setTimeout(function(){removeElement("man6")}, 2500);
+        setTimeout(function(){removeElement("silhouette")}, 2500);
+        setTimeout(function(){displayElement("phrases1")}, 3000);
+        setTimeout(function(){displayElement("phrases2")}, 5000);
+        setTimeout(function(){displayElement("and")}, 6000);
+        setTimeout(function(){displayElement("phrases3")}, 7000);
+        setTimeout(function(){displayElement("convo")}, 8000);
+        setTimeout(function(){removeElement("convo")}, 10000);
+        setTimeout(function(){removeElement("phrases3")}, 10000);
+        setTimeout(function(){removeElement("phrases2")}, 10000);
+        setTimeout(function(){removeElement("phrases1")}, 10000);
+        setTimeout(function(){removeElement("and")}, 10000);
+        setTimeout(function(){displayElement("hell")}, 10000);
+        setTimeout(function(){document.getElementById("hell").style.textShadow = "2px 2px"; document.getElementById("hell").style.color = "crimson"}, 10500);
+        setTimeout(function(){displayElement("vitriol")}, 11500);
+    }
+
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
+    }
+
+    function removeElement(element) {
+        document.getElementById(element).style.opacity = 0;
+    }
+</script>
