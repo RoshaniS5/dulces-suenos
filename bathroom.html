@@ -1,0 +1,195 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #feet {
+        position: absolute;
+        width: 768px;
+    }
+
+    #text1 {
+        background-color: #1F1F26;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 10%;
+        z-index: 10;
+    }
+
+    #text2 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        left: 8%;
+        z-index: 10;
+    }
+
+    #text2:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text3 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 8;
+        opacity: 0;
+    }
+
+    #text3:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text4 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 8;
+        opacity: 0;
+    }
+
+    #text4:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text5 {
+        background-color: #1F1F26;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 30%;
+        z-index: 8;
+        opacity: 0;
+    }
+
+    #text6 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        left: 20%;
+        z-index: 8;
+        opacity: 0;
+    }
+
+    #text6:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text7 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 8;
+        opacity: 0;
+    }
+
+    #text7:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+</style>
+
+<div class="frame">
+    <img id="feet" src="barefeet.png">
+    <p id="text1"><i>I first knew something was wrong with me when I was four.</i></p>
+    <a id="text2" onclick="nextText()"><i>It was the middle of the night, and I was barefoot in the bathroom,</i></a>
+    <a id="text3" onclick="nextNextText()"><i>my hands entangled beneath the warm tap water as I washed the last of the suds off.</i></a>
+    <a id="text4" onclick="nextText3()"><i>As I looked up from the bubbles snaking their way down the sides of the basin and to the drain,</i></a>
+    <p id="text5"><i>I saw my reflection in the mirror</i></p>
+    <a id="text6" onclick="nextText4()">contort itself into a smile without my permission.</a>
+    <a id="text7" href="smile.html"><i>As I slowly stepped backwards, I couldn’t place my finger on what exactly was wrong besides that smile, but she didn’t look like me.</i></a>
+</div>
+
+<script>
+    window.onload = function init() {
+        setTimeout(function(){displayElement("text2")}, 1000);
+    }
+
+    function nextText() {
+        document.getElementById("feet").setAttribute("src", "bathroom.png");
+        removeElement("text1");
+        removeElement("text2");
+        displayElement("text3");
+        document.getElementById("text2").style.zIndex = -1;
+        document.getElementById("text3").style.zIndex = 10;
+    }
+
+    function nextNextText() {
+        document.getElementById("feet").setAttribute("src", "sink.png");
+        removeElement("text3");
+        displayElement("text4");
+        document.getElementById("text3").style.zIndex = -1;
+        document.getElementById("text4").style.zIndex = 10;
+    }
+
+    function nextText3() {
+        document.getElementById("feet").setAttribute("src", "mirror1.png");
+        removeElement("text4");
+        displayElement("text5");
+        document.getElementById("text4").style.zIndex = -1;
+        setTimeout(function(){document.getElementById("feet").setAttribute("src", "mirror2.png");}, 1000);
+        setTimeout(function(){displayElement("text6"); document.getElementById("text6").style.zIndex = 10;}, 1000);
+    }
+
+    function nextText4() {
+        document.getElementById("feet").setAttribute("src", "takenaback.png");
+        removeElement("text5");
+        removeElement("text6");
+        document.getElementById("text6").style.zIndex = -1;
+        displayElement("text7");
+        document.getElementById("text7").style.zIndex = 10;
+    }
+
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
+    }
+
+    function removeElement(element) {
+        document.getElementById(element).style.opacity = 0;
+    }
+</script>
