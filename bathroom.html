@@ -32,9 +32,10 @@
         font-size: 25px;
         text-align: center;
         position: absolute;
+        opacity: 0;
         bottom: 10px;
         left: 8%;
-        z-index: 10;
+        z-index: -1;
     }
 
     #text2:hover {
@@ -52,7 +53,7 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
-        z-index: 8;
+        z-index: -1;
         opacity: 0;
     }
 
@@ -71,7 +72,7 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
-        z-index: 8;
+        z-index: -1;
         opacity: 0;
     }
 
@@ -102,7 +103,7 @@
         position: absolute;
         bottom: 10px;
         left: 20%;
-        z-index: 8;
+        z-index: -1;
         opacity: 0;
     }
 
@@ -122,7 +123,7 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
-        z-index: 8;
+        z-index: -1;
         opacity: 0;
     }
 
@@ -137,7 +138,7 @@
 <div class="frame">
     <img id="feet" src="barefeet.png">
     <p id="text1"><i>I first knew something was wrong with me when I was four.</i></p>
-    <a id="text2" onclick="nextText()"><i>It was the middle of the night, and I was barefoot in the bathroom,</i></a>
+    <a id="text2" onclick=""><i>It was the middle of the night, and I was barefoot in the bathroom,</i></a>
     <a id="text3" onclick="nextNextText()"><i>my hands entangled beneath the warm tap water as I washed the last of the suds off.</i></a>
     <a id="text4" onclick="nextText3()"><i>As I looked up from the bubbles snaking their way down the sides of the basin and to the drain,</i></a>
     <p id="text5"><i>I saw my reflection in the mirror</i></p>
@@ -147,11 +148,14 @@
 
 <script>
     window.onload = function init() {
-        setTimeout(function(){displayElement("text2")}, 1000);
+        displayElement("text2"); 
+        document.getElementById("text2").style.zIndex = 10; 
+        setTimeout(function(){document.getElementById("text2").setAttribute("onclick", "nextText()");}, 1500);
+        setTimeout(function(){removeElement("text1");document.getElementById("feet").setAttribute("src", "bathroom.png");}, 1500);
     }
 
     function nextText() {
-        document.getElementById("feet").setAttribute("src", "bathroom.png");
+        document.getElementById("feet").setAttribute("src", "washinghands.png");
         removeElement("text1");
         removeElement("text2");
         displayElement("text3");

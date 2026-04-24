@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #image1 {
+        position: absolute;
+        width: 768px;
+    }
+
+    #text1 {
+        /* background-color: #1F1F26; */
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text2 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 10%;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text3 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        right: 10px;
+        z-index: 10;
+    }
+
+    #text4 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        bottom: 10px;
+        left: 10px;
+        z-index: -1;
+    }
+
+    #text4:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text5 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        left: 10px;
+        margin-right: 50%;
+        z-index: 10;
+    }
+
+    #text6 {
+        background-color: white;
+        color: black;
+        font-size: 50px;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        opacity: 0;
+        bottom: 10px;
+        left: 30%;
+        z-index: -1;
+    }
+
+    #text6:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+</style>
+
+<p id="text1">So now, in the chill of the evening with the room dimly lit as the sun was setting just past the windows, she made me hate it again:</p>
+<p id="text2">
+    As you soaked up the blood with a cheap tissue, I winced,<br>
+    &emsp;<i>Did you think you could ask for repentance by cleaning it up? I’m not convinced<br>
+    &emsp;that you learned from last time; ghost images of the wounds you gave me remain<br>
+    &emsp;from the act of you violently cutting against the grain,<br>
+    &emsp;praying that I would match your telepathic (tele)vision</i><br>
+    and still you are now, to Dios you turned to cover me up with precision.<br>
+    With a knife you carved your idea of happiness from ear to ear<br>
+    before lowering a candle into the hollow cavity you scooped out, holding dear<br>
+    the assumption that it would warm and illuminate, rather than melt me down<br>
+    into an unrecognizable form, a crumpled hospital gown.<br>
+</p>
+<p id="text3">
+    A tube of concealer, mascara wand, blush palette, and tube of lipstick<br>
+    were all you needed to churn me sick:<br>
+    &emsp;Was it your intention to paint me in the style of Picasso and leave me distorted?<br>
+    &emsp;I was thwarted,<br>
+</p>
+
+<p id="text5">
+    It felt like summer of ‘23 when I decided that life was no longer worth living and I sliced myself open just for the EMTs to take me away, revive me, and shove me into a psychiatric facility to teach me some semblance of meaning. Or so they thought. All that did was make me realize that I didn’t want to slip up next time. No way was I ever going back to that facility—that gloomy place of pale blue gowns, yellow grippy socks, underseasoned bland food, and a whopping medical debt. It was life or death.
+</p>
+
+<a id="text6" href="past.html">No more in-betweens.</a>
+
+
+<div class="frame">
+    <img id="image1" src="psychhosp.png">
+    <a id="text4" onclick="next()">so once she turned her back to me, I dug my nails into the soft flesh above me and scratched, scratched, <i>scratched</i> until I could no longer feel its weight.</a>
+</div>
+
+<script>
+    window.onload = function init() {
+        setTimeout(function(){displayElement("text2");}, 1500);
+        setTimeout(function(){document.getElementById("image1").setAttribute("src", "candle.png");}, 5500);
+        setTimeout(function(){document.getElementById("image1").setAttribute("src", "crumpledgown.png");}, 7500);
+        setTimeout(function(){displayElement("text3");}, 10000);
+        setTimeout(function(){displayElement("text4");document.getElementById("text4").style.zIndex = 10}, 15000);
+    }
+
+    function next() {
+        removeElement("text1");
+        removeElement("text2");
+        removeElement("text3");
+        removeElement("text4");
+        document.getElementById("text4").style.zIndex = -1;
+        displayElement("text5");
+        setTimeout(function(){displayElement("text6");document.getElementById("text6").style.zIndex = 10}, 8000);
+    }
+
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
+    }
+
+    function removeElement(element) {
+        document.getElementById(element).style.opacity = 0;
+    }
+</script>

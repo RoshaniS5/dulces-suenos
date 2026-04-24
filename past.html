@@ -1,0 +1,257 @@
+<link rel="stylesheet" href="style.css">
+<style>
+    .frame {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        border: 1px solid;
+        overflow: hidden;
+        transform: scale(1);
+        background-color: #1F1F26; 
+    }
+
+    #firstknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 15%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(-25deg);
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #secondknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 45%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(25deg);
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #thirdknock {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 75%;
+        opacity: 0;
+        text-shadow: 3px 3px;
+        transform: rotate(-25deg);
+        transition: opacity 250ms ease-in-out;
+    }
+
+    #image {
+        position: absolute;
+        height: 768px;
+    }
+
+    #text1 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        top: 75%;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text2 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 75%;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text3 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 75%;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text4 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        left: 10px;
+        margin-right: 60%;
+        z-index: 10;
+    }
+
+    #text5 {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text6 {
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        position: absolute;
+        text-decoration: none;
+        opacity: 0;
+        bottom: 10px;
+        left: 10px;
+        z-index: -1;
+    }
+
+    #text6:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+
+    #text7 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 10%;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #text8 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 10%;
+        left: 10px;
+        margin-right: 60%;
+        z-index: 10;
+    }
+
+    #text9 {
+        background-color: #1F1F26;
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        top: 10%;
+        left: 10px;
+        margin-right: 60%;
+        z-index: 10;
+    }
+
+    #text10 {
+        background-color: white;
+        color: black;
+        font-size: 50px;
+        text-align: left;
+        position: absolute;
+        text-decoration: none;
+        opacity: 0;
+        top: 10%;
+        left: 30%;
+        z-index: -1;
+    }
+
+    #text10:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+        transition: all 250ms ease-in-out;
+    }
+</style>
+
+<p id="text4"><i>She pushed my bedroom door open (</i>god dammit, I forgot to lock it<i>), only to find my limp body on the carpet, sprawled out like Jesus on the cross. My wrists were facing the ceiling, evidence of the crucifixion leaking out in the form of a dark crimson liquid. She gasped and collapsed to the floor beside me. “Oh God, oh God. </i>Dios mio, por favor no te lleves a mi hija.<i>” I felt a fractal of guilt erupt across my belly as I heard her weep beside me. She fumbled for the phone in her pocket—an old Nokia she bought a decade ago—and dialed 911. Her pleas for help were bubbled up in snot, a funny contrast to the calm demeanor of the operator on the other end saying, “Ma'am, take a few deep breaths and stay with me.”</i></p>
+<p id="text7">
+    I had finally given in and painted my nails red like the girls she always compared me to:<br>
+	&emsp;those <i>niñas</i> inhaling acetone as they brushed another thin rose coat on,<br>
+	&emsp;bonding with their <i>mamás</i> as they picked out dresses from pinterest they liked,<br>
+	&emsp;stealing lipstick from the bedroom down the hall<br>
+    &emsp;to see how it looked on their own faces,<br>
+	&emsp;with oversized high heels on their feet to bring them eye to eye with the <i>mujeres</i>.<br>
+    She can’t say I never tried, porque<br>
+    &emsp;<i>yo le di una hija, una Guadalupe muerta.</i>
+</p>
+
+<p id="text8">
+    As I walked away from the burning house, I was dead to her. She had been crying for days over the skin I shed. Crying and crying until her cheeks hurt. I always knew that she loved a ghost more than she loved me, so I left. How could she love someone she refused to know?
+	<br><br>Guadalupe gave birth to a baby boy named Jesus Christ when I was born. He was crucified, but he came back. He always did. 
+</p>
+
+<p id="text9">
+    When I woke up, I was in bed with the comforter up to my neck. I felt the weight of skin again, uncomfortably warm and sticky against me. I turned my head and there she was again, <i>mi mamá</i>, stroking the side of my face tenderly. <i>How could I still love her?</i> “I’m so glad you came back home, <i>mija</i>.” 
+	<br><br> I couldn’t feel her love because the skin wasn’t my own.
+</p>
+
+<div class="frame">
+    <img id="image" src="doorclosed.png">
+    <p id="firstknock">KNOCK</p>
+    <p id="secondknock">KNOCK</p>
+    <p id="thirdknock">KNOCK</p>
+    <p id="text1"><i>“</i>Mija<i>, I need your help with dinner.” She knocked on the door a few times before growing irritated. “I know you’re in there. Open up, Guadalupe.</i> Ándale.<i>”</i></p>
+    <p id="text2"><i>A minute passed. I heard her foot tap impatiently and even saw its hyper silhouette dance across the threshold. Because of this, there was an inconsistency in how the light peeked through the gap below the door. It flickered across my face like strobe lights in a rave, only less harsh.</i></p>
+    <p id="text3"><i>“</i>Ay, en serio, Lupe—<i>”</i></p>
+    <p id="text5">She was crying again as she held my wrist. “Why do you keep doing this to me?”</p>
+    <a id="text6" onclick="next()">My fingers had burst through the leather, blood-soaked and g(r)asping for air.</a>
+    <a id="text10" href="index.html">DULCES SUEÑOS</a>
+</div>
+
+<script>
+    window.onload = function knock() {
+        displayElement("firstknock");
+        setTimeout(function(){removeElement("firstknock")}, 500);
+        setTimeout(function(){displayElement("secondknock")}, 500);
+        setTimeout(function(){removeElement("secondknock")}, 1000);
+        setTimeout(function(){displayElement("thirdknock")}, 1000);
+        setTimeout(function(){removeElement("thirdknock")}, 1500);
+        setTimeout(function(){removeElement("thirdknock")}, 1500);
+        setTimeout(function(){removeElement("text1");displayElement("text2")}, 5000);
+        setTimeout(function(){document.getElementById("image").setAttribute("src", "dooropen.png");removeElement("text2");displayElement("text3")}, 13000);
+        setTimeout(function(){document.getElementById("image").setAttribute("src", "christ.png");removeElement("text3");displayElement("text4")}, 14000);
+        setTimeout(function(){document.getElementById("image").setAttribute("src", "bloodyhand.png");removeElement("text4");displayElement("text5")}, 24000);
+        setTimeout(function(){displayElement("text6"); document.getElementById("text6").style.zIndex = 10}, 25000);
+    }
+
+    function next() {
+        removeElement("text5");
+        removeElement("text6");
+        document.getElementById("text6").style.zIndex = -1;
+        displayElement("text7");
+        setTimeout(function(){document.getElementById("image").setAttribute("src", "burninghouse.png");removeElement("text7");displayElement("text8")}, 10000);
+        setTimeout(function(){document.getElementById("image").setAttribute("src", "end.png");removeElement("text8");displayElement("text9")}, 20000);
+        setTimeout(function(){removeElement("image");removeElement("text9");displayElement("text10"); document.getElementById("text10").style.zIndex = 10}, 30000);
+    }
+
+    function displayElement(element) {
+        document.getElementById(element).style.opacity = 1;
+    }
+
+    function removeElement(element) {
+        document.getElementById(element).style.opacity = 0;
+    }
+</script>
